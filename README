@@ -1,0 +1,17 @@
+/util
+	array: a simple dynamic array to add remove net_size_t data
+
+	heap : this is a special heap just for net node<index, weight>, you should initialize it with the maximum size, and once you pop the top of the heap, you should not update the heap any more. but you can upgrade the weight of specified node at any time.
+
+	kvset: a set use node index as key, and store the weight data
+
+        set  : s simple set only contains node index
+
+
+/statistic
+
+	dijkstra: calculate the short path tree of the net
+	
+	clusters: calculate the number of clusters in the net and the count of each cluster	
+
+	
