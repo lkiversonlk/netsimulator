@@ -13,7 +13,7 @@
  * e_sel select nodes that can be used as the edge of the correlation calculation
  * type indicate the way to calculate distance between center and edge nodes
  * max, min are the range parameter
- * if define 
+ * if define STAT_DEBUG, this will report the calculation detail
  */
 double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE type, double max, double min, Net *net){
   net_size_t size = net_size(net);
