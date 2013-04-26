@@ -4,11 +4,7 @@
 #include "commons/type.h"
 #include "model/net.h"
 
-typedef struct selector{
-  bool (*select)(net_size_t idx, Net *net, struct selector *self);
-  void (*destroy)(struct selector *self);
-  void *ctx;
-}Selector;
+typedef struct selector Selector;
 
 typedef enum selector_kind{
   SELECTOR_NORMAL,
@@ -18,8 +14,12 @@ typedef enum selector_kind{
 
 Selector *stat_get_selector(SELECTOR_KIND kind);
 
-bool stat_select(net_size_t i, Net *net, Selector *sel){
+bool stat_selector_select(net_size_t i, Net *net, Selector *sel){
   return sel->select(i, net, sel);
+}
+
+void stat_selector_destroy(Selector *sel){
+  sel->destroy(sel);
 }
 
 #endif

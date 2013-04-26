@@ -6,6 +6,15 @@
 #include <string.h>
 #include <stdio.h>
 
+
+/**
+ * this function calculate net's correlation 
+ * c_sel select nodes that can be used as the center of the correlation calculation
+ * e_sel select nodes that can be used as the edge of the correlation calculation
+ * type indicate the way to calculate distance between center and edge nodes
+ * max, min are the range parameter
+ * if define 
+ */
 double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE type, double max, double min, Net *net){
   net_size_t size = net_size(net);
 
@@ -84,3 +93,4 @@ double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE 
   
   return (dividor/division/sigma);
 }
+
