@@ -36,6 +36,7 @@ static int after_size(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
    * ctx->edge_sel   = stat_get_selector(SELECTOR_CASCADE);    
    * ctx->distance_cal = distance_calculator(WALK);                 for distance there are WALK, DIRECT
    */
+  return 0;
 }
 
 /**
@@ -43,6 +44,8 @@ static int after_size(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_connect(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
@@ -50,6 +53,8 @@ static int after_connect(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_capacity(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
@@ -57,6 +62,8 @@ static int after_capacity(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_attack(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
@@ -66,6 +73,8 @@ static int after_attack(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_loop(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
@@ -73,6 +82,8 @@ static int after_loop(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_steady(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
@@ -82,6 +93,8 @@ static int after_steady(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
  */
 static int after_destroy(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   struct private_ctx *ctx = pak->ctx;
+
+  return 0;
 }
 
 /**
