@@ -53,7 +53,7 @@ double stat_correlation(Selector *c_sel, Selector *e_sel, Selector *value_sel, D
 #endif
       
       //center node's state value
-      double state = -broken_rate;
+      double state = -rate;
       if(stat_selector_select(i, net, value_sel) == TRUE){
          state += 1;
       }
@@ -75,7 +75,7 @@ double stat_correlation(Selector *c_sel, Selector *e_sel, Selector *value_sel, D
          printf("stat_correlation::distance is %f\n", distance);
 #endif
          
-         double sub_state = -broken_rate;
+         double sub_state = -rate;
          if(stat_selector_select(j, net, value_sel) == TRUE){
             sub_state += 1;
          }

@@ -48,6 +48,7 @@ enum operation{
   OPER_AFTER_SIZE = 0,
   OPER_AFTER_CONNECT,
   OPER_AFTER_CAPACITY,
+  OPER_ATTACK,
   OPER_AFTER_ATTACK,
   OPER_AFTER_EACH_LOOP,
   OPER_AFTER_STEADY,
@@ -61,6 +62,7 @@ struct net_exp_package{
   net_exp_oper after_net_size;
   net_exp_oper after_net_connect;
   net_exp_oper after_net_capcity;
+  net_exp_oper attack;
   net_exp_oper after_attack;
   net_exp_oper after_each_loop;  //this will be called after the net went steady
   net_exp_oper after_net_steady;
