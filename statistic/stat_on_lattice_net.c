@@ -1,5 +1,7 @@
 #include "statistic/stat_on_lattice_net.h"
+#include "statistic/stat_distance.h"
 #include "util/set.h"
+#include "model/lattice_net.h"
 
 #include <math.h>
 #include <stdlib.h>
@@ -15,7 +17,7 @@
  * max, min are the range parameter
  * if define STAT_DEBUG, this will report the calculation detail
  */
-double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE type, double max, double min, Net *net){
+double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, Distance *distance_cal, double max, double min, Net *net){
   net_size_t size = net_size(net);
 
   net_size_t broken_count = net_broken_nodes_count(net);
@@ -38,7 +40,7 @@ double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE 
 
   net_size_t i, j;
   for(i = 0; i < size; i++){
-    if(stat_select(i, net, c_sel) == FALSE) continue;
+    if(stat_selector_select(i, net, c_sel) == FALSE) continue;
 
 #ifdef STAT_DEBUG
     printf("stat_correlation::center node %d\n", i);
@@ -53,23 +55,13 @@ double stat_correlation_cascade(Selector *c_sel, Selector *e_sel, DISTANCE_TYPE 
 
     double sub_dividor = 0;
     for(j = 0; j < size; j++){
-      if(stat_select(j, net, e_sel) == FALSE) continue;
+      if(stat_selector_select(j, net, e_sel) == FALSE) continue;
 
 #ifdef STAT_DEBUG
       printf("stat_correlation::edge node %d\n", j);
 #endif
 
-      double distance = 0;
-      switch(type){
-      case DISTANCE_DIRECT:
-	distance = distance_direct(i, j, net, NULL);
-	break;
-      case DISTANCE_WALK:
-	distance = distance_walk(i, j, net, NULL);
-	break;
-      default:
-	break;
-      }
+      double distance = distance_between(i, j, net, distance_cal);
 
       if((distance <= min) || (distance > max)) continue;
 

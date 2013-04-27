@@ -7,6 +7,7 @@
 typedef struct selector Selector;
 
 typedef enum selector_kind{
+  SELECTOR_ALL,
   SELECTOR_NORMAL,
   SELECTOR_BROKEN,
   SELECTOR_CASCADE

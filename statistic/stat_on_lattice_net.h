@@ -5,6 +5,7 @@
 #include "model/net.h"
 #include "model/lattice_net.h"
 #include "statistic/stat_selector.h"
+#include "statistic/stat_distance.h"
 
 // 2013.4.6 update
 // this function was prepared for CR, MR, ... and so on
@@ -17,12 +18,6 @@
 // the select function was replaced by select class
 //
 
-//statistic the correlation of this net
-typedef enum distance_type{
-  DISTANCE_DIRECT,
-  DISTANCE_WALK
-}DISTANCE_TYPE;
-
-double stat_correlation(Selector *center_sel, Selector *edge_sel, DISTANCE_TYPE type, double max, double min, Net *net);
+double stat_correlation(Selector *center_sel, Selector *edge_sel, Distance *distance_cal, double max, double min, Net *net);
 
 #endif

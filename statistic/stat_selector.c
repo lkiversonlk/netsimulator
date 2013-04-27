@@ -28,6 +28,10 @@ static bool cascade_node(net_size_t i, Net *net, Selector *self){
   return FALSE;
 }
 
+static bool all_node(net_size_t i, Net *net, Selector *self){
+  return TRUE;
+}
+
 void default_destroy(Selector *sel){
   free(sel);
 }
@@ -37,14 +41,17 @@ Selector *stat_get_selector(SELECTOR_KIND kind){
   if (sel == NULL) return sel;
   sel->destroy = default_destroy;
   switch(kind){
+  case SELECTOR_ALL:
+    sel->select = all_node;
+    break;
   case SELECTOR_NORMAL:
     sel->select = normal_node;
     break;
   case SELECTOR_BROKEN:
-    sel->selector = broken_node;
+    sel->select = broken_node;
     break;
   case SELECTOR_CASCADE:
-    sel->selector = cascade_node;
+    sel->select = cascade_node;
     break;
   default:
     break;
