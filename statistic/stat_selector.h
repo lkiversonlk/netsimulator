@@ -6,14 +6,12 @@
 
 typedef struct selector Selector;
 
-typedef enum selector_kind{
-  SELECTOR_ALL,
-  SELECTOR_NORMAL,
-  SELECTOR_BROKEN,
-  SELECTOR_CASCADE
-}SELECTOR_KIND;
+#define  SELECTOR_ALL 0x01
+#define  SELECTOR_NORMAL 0x02
+#define  SELECTOR_BROKEN 0x04
+#define  SELECTOR_CASCADE 0x08
 
-Selector *stat_get_selector(SELECTOR_KIND kind);
+Selector *stat_get_selector(int type);
 
 bool stat_selector_select(net_size_t i, Net *net, Selector *sel);
 

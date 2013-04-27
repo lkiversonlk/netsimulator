@@ -22,6 +22,11 @@ static int after_size(Net *net, BC *bc, Exp_State *state, Net_Exp_Pak *pak){
   
   /**
    * you should initalize the selctor and distance_cal here
+   * for example:
+   * ctx->center_sel = stat_get_selector(SELECTOR_BROKEN | SELECTOR_CASCADE); 
+   *            for selector there are SELECTOR_ALL, SELECTOR_NORMAL, SELECTOR_BROKEN, SELECTOR_CASCADE
+   * ctx->edge_sel   = stat_get_selector(SELECTOR_CASCADE);    
+   * ctx->distance_cal = distance_calculator(WALK);                 for distance there are WALK, DIRECT
    */
 }
 
