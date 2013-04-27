@@ -8,11 +8,19 @@
 
 #include <stdio.h>
 
+/********************************************************************************
+ * test_template.c
+ *
+ * this is a template, please don't modify it, just make a copy and fill in your stuff
+ *
+ * you may use stat_correlation(Selector *center, Selector *center, Distance *center, double max, double min, Net *net) to calculate correlations
+ * 
 struct private_ctx{
   Selector *center_sel;
   Selector *edge_sel;
   Distance *distance_cal;
 };
+
 
 /**
  * add operations you want to do when the net size is fixed

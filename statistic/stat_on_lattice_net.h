@@ -18,6 +18,10 @@
 // the select function was replaced by select class
 //
 
-double stat_correlation(Selector *center_sel, Selector *edge_sel, Distance *distance_cal, double max, double min, Net *net);
+double stat_correlation(Selector *center_sel, Selector *edge_sel, Selector *value_sel, Distance *distance_cal, double max, double min, Net *net);
+
+double stat_count(Selector *center_sel, Selector *edge_sel, Distance *distance_cal, double max, double min, Net *net);
+
+double stat_distance(Selector *center_sel, Selector *edge_sel, Distance *distance_cal, double max, double min, Net *net);
 
 #endif
