@@ -14,12 +14,8 @@ typedef enum selector_kind{
 
 Selector *stat_get_selector(SELECTOR_KIND kind);
 
-bool stat_selector_select(net_size_t i, Net *net, Selector *sel){
-  return sel->select(i, net, sel);
-}
+bool stat_selector_select(net_size_t i, Net *net, Selector *sel);
 
-void stat_selector_destroy(Selector *sel){
-  sel->destroy(sel);
-}
+void stat_selector_destroy(Selector *sel);
 
 #endif
