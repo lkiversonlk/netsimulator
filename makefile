@@ -1,7 +1,7 @@
 model = net.o node.o path_node.o path_tree.o lattice_net.o
 util  = array.o arraymap.o heap.o kvset.o set.o link.o
 operator = connector.o simple_connector.o lattice_guassi_connector.o attack.o net_constructor.o
-statistic = dijkstra.o clusters.o betweenness.o stat_on_lattice_net.o
+statistic = dijkstra.o clusters.o betweenness.o stat_on_lattice_net.o stat_selector.o stat_distance.o
 package = runner.o load_break.o runner_param.o net_experiment.o net_diagnose_pak.o
 CC    = gcc 
 FLAG  = -g -lgmp -lm -I. 

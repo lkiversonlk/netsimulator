@@ -12,6 +12,7 @@
  * 
  ***************************************************************************************/
 
+/*
 int lattice_foreach_within(oper_on_each oper, void *ctx, net_size_t i, double radius, double width, Lattice_Net *net){
   
   int edge = sqrt(net_size(net));
@@ -41,6 +42,7 @@ int lattice_foreach_within(oper_on_each oper, void *ctx, net_size_t i, double ra
   }
   return ret;
 }
+*/
 
 double distance_to_center(net_size_t i, Net *net, void *ctx){
   net_size_t edge = sqrt(net_size(net));
