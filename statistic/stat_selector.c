@@ -49,7 +49,7 @@ bool stat_selector_select(net_size_t i, Net *net, Selector *sel){
   int type = sel->type;
   bool result = FALSE;
   
-  if ( type & SELECOR_ALL ){
+  if ( type & SELECTOR_ALL ){
     return TRUE;
   }
 
