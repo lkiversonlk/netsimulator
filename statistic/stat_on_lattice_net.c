@@ -33,7 +33,7 @@ double stat_correlation(Selector *c_sel, Selector *e_sel, Selector *value_sel, D
    }
    double rate = ((double)count)/size;
 #ifdef STAT_DEBUG
-   printf("stat_correlation::net's rate is %f\n", broken_rate);
+   printf("stat_correlation::net's rate is %f\n", rate);
 #endif
    
    //correlation = SUMij{(Xi - Xaver)(Xj-Xaver)}/(sigma * SUMi{COUNTj})
