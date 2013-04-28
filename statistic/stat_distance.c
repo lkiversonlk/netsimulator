@@ -58,3 +58,14 @@ double distance_between(net_size_t i, net_size_t j, Net *net, Distance *cal){
     return -1;
   }
 }
+
+double distance_between_opposite(net_size_t i, net_size_t j, Net *net, Distance *cal){
+  switch (cal->type){
+  case WALK:
+    return distance_direct(i, j, net);
+  case DIRECT:
+    return distance_walk(i, j, net);
+  default:
+    return -1;
+  }
+}

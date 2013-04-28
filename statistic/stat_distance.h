@@ -13,5 +13,6 @@ typedef enum distance_type{
 Distance *distance_calculator(DISTANCE_TYPE type);
 
 double distance_betweeen(net_size_t i, net_size_t j, Net *net, Distance *cal);
+double distance_between_opposite(net_size_t i, net_size_t j, Net *net, Distance *cal);
 
 #endif
